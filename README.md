@@ -9,12 +9,12 @@ New-AzureRmResourceGroupDeployment -Name ACSDeployment -ResourceGroupName ACStes
 ```
 # Get Swarm Node Scale Set name
 ```
-Find-AzureRmResource -ResourceGroupNameContains  ACStest2 -ResourceType "microsoft.compute/virtualMachineScaleSets" | Select-Object -Property ResourceName
+Find-AzureRmResource -ResourceGroupNameContains ACStest -ResourceType "microsoft.compute/virtualMachineScaleSets" | Select-Object -Property ResourceName
 ```
 
 # Scale in or out of the existing ACS
 ```
-New-AzureRmResourceGroupDeployment -Name ACSScale -ResourceGroupName ACStest -TemplateFile .\acs-scale.json -vmSSName swarm-agent-D3A28560-vmss -agentCount 5
+New-AzureRmResourceGroupDeployment -Name ACSScale -ResourceGroupName ACStest -TemplateFile .\acs-scale.json -vmSSName swarm-agent-XXXXXXX-vmss -agentCount 5
 ```
 
 
