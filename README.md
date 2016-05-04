@@ -7,6 +7,10 @@ Login-AzureRmAccount
 New-AzureRmResourceGroup -Location northeurope -Name ACStest
 New-AzureRmResourceGroupDeployment -Name ACSDeployment -ResourceGroupName ACStest -TemplateFile .\acs.json -TemplateParameterFile .\acs.parameters.json
 ```
+# Get Swarm Node Scale Set name
+```
+Find-AzureRmResource -ResourceGroupNameContains  ACStest2 -ResourceType "microsoft.compute/virtualMachineScaleSets" | Select-Object -Property ResourceName
+```
 
 # Scale in or out of the existing ACS
 ```
